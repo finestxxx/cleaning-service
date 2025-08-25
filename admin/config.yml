@@ -19,4 +19,20 @@ backend:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 # Add site links in DecapCMS (optional)
-site_url:  https://finestxxx.github.io
+site_url: https://finestxxx.github.io
+
+# REQUIRED: where to store uploaded files
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+# REQUIRED: define content collections
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.html"
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
