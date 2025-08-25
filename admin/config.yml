@@ -1,22 +1,23 @@
-# Backend Configuration for GitHub Pages + Decap Bridge
+# Backend Configuration for GitHub + Decap Bridge
 backend:
-  name: github
+  name: git-gateway # This tells the CMS to use a gateway for authentication
   repo: finestxxx/cleaning-service
   branch: main
-  base_url: https://decap-bridge.onrender.com
-  auth_endpoint: auth
 
-# Where to store uploaded images
+# This is the critical section that was missing.
+# It tells the git-gateway which specific auth service to use.
+identity_widget:
+  url: https://decap-bridge.onrender.com
+  oauth_provider: github
+
+# Media files (images) configuration
 media_folder: "assets/images"
-
-# THIS IS THE CRITICAL FIX for image paths.
-# It tells the CMS to prepend the repository name to all saved image URLs.
 public_folder: "/cleaning-service/assets/images"
 
 # Add a link back to your live site from the admin panel
 site_url: https://finestxxx.github.io/cleaning-service/
 
-# The collections structure remains the same
+# Collections (your content)
 collections:
   - name: "pages"
     label: "Page Content"
@@ -25,7 +26,6 @@ collections:
         label: "Homepage"
         name: "homepage"
         fields:
-          # The fields below are unchanged but are included for completeness.
           - { label: "Site Logo Text", name: "logo_text", widget: "string", default: "Sparkle Clean" }
           - { label: "Hero Section Title", name: "hero_title", widget: "string" }
           - { label: "Hero Section Subtitle", name: "hero_subtitle", widget: "string" }
