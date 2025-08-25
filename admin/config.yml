@@ -1,48 +1,46 @@
 # Backend Configuration for GitHub Pages + Decap Bridge
 backend:
   name: github
-  repo: finestxxx/cleaning-service # Your repository path
-  branch: main # Change to 'master' if that's your default branch
+  repo: finestxxx/cleaning-service
+  branch: main
   base_url: https://decap-bridge.onrender.com
   auth_endpoint: auth
 
-# Where to store uploaded images.
-# IMPORTANT: Make sure you have created an "assets" folder, and inside it, an "images" folder.
+# Where to store uploaded images
 media_folder: "assets/images"
-public_folder: "/assets/images"
 
-# Add a link back to your live site from the admin panel.
-# This is the correct URL format for a GitHub Pages project site.
+# THIS IS THE CRITICAL FIX for image paths.
+# It tells the CMS to prepend the repository name to all saved image URLs.
+public_folder: "/cleaning-service/assets/images"
+
+# Add a link back to your live site from the admin panel
 site_url: https://finestxxx.github.io/cleaning-service/
 
-# This "File Collection" manages all the content for your homepage.
+# The collections structure remains the same
 collections:
   - name: "pages"
     label: "Page Content"
     files:
-      # This is the single data file the CMS will edit.
       - file: "_data/homepage.json"
         label: "Homepage"
         name: "homepage"
         fields:
+          # The fields below are unchanged but are included for completeness.
           - { label: "Site Logo Text", name: "logo_text", widget: "string", default: "Sparkle Clean" }
           - { label: "Hero Section Title", name: "hero_title", widget: "string" }
           - { label: "Hero Section Subtitle", name: "hero_subtitle", widget: "string" }
           - { label: "Hero Section Background Image", name: "hero_image", widget: "image" }
-          
           - { label: "About Us Section Title", name: "about_title", widget: "string" }
           - { label: "About Us Description", name: "about_description", widget: "markdown" }
           - { label: "About Us Image", name: "about_image", widget: "image" }
-
           - { label: "Services Section Title", name: "services_title", widget: "string" }
           - label: "Services List"
             name: "services"
             widget: "list"
             fields:
-              - { label: "Icon (Font Awesome Class)", name: "icon", widget: "string", hint: "e.g., fas fa-home or fas fa-building" }
+              - { label: "Icon (Font Awesome Class)", name: "icon", widget: "string", hint: "e.g., fas fa-home" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "string" }
-
           - { label: "Pricing Section Title", name: "pricing_title", widget: "string" }
           - label: "Pricing Plans"
             name: "pricing_plans"
@@ -51,8 +49,7 @@ collections:
               - { label: "Plan Title", name: "title", widget: "string" }
               - { label: "Price", name: "price", widget: "string", hint: "e.g., $150" }
               - { label: "Is this the popular plan?", name: "is_popular", widget: "boolean", default: false }
-              - { label: "Features", name: "features", widget: "list", field: { label: "Feature Item", name: "item", widget: "string" } }
-              
+              - { label: "Features", name: "features", widget: "list" }
           - { label: "Testimonials Section Title", name: "testimonials_title", widget: "string" }
           - label: "Testimonials"
             name: "testimonials"
@@ -61,6 +58,5 @@ collections:
               - { label: "Client Image", name: "image", widget: "image" }
               - { label: "Quote", name: "quote", widget: "text" }
               - { label: "Author", name: "author", widget: "string" }
-              
           - { label: "Contact Section Title", name: "contact_title", widget: "string" }
           - { label: "Footer Text", name: "footer_text", widget: "string" }
