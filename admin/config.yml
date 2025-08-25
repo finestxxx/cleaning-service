@@ -1,21 +1,21 @@
 # Backend Configuration for GitHub Pages + Decap Bridge
-# This is the modern, recommended way to set up the backend.
 backend:
   name: github
   repo: finestxxx/cleaning-service # Your repository path
-  branch: main # Or master, whichever you use
+  branch: main # Change to 'master' if that's your default branch
   base_url: https://decap-bridge.onrender.com
   auth_endpoint: auth
 
 # Where to store uploaded images.
-# IMPORTANT: Make sure you create an "assets" folder, and inside it, an "images" folder.
+# IMPORTANT: Make sure you have created an "assets" folder, and inside it, an "images" folder.
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
-# Add a link back to your live site from the admin panel
+# Add a link back to your live site from the admin panel.
+# This is the correct URL format for a GitHub Pages project site.
 site_url: https://finestxxx.github.io/cleaning-service/
 
-# This "File Collection" manages the content for a single page.
+# This "File Collection" manages all the content for your homepage.
 collections:
   - name: "pages"
     label: "Page Content"
@@ -39,7 +39,7 @@ collections:
             name: "services"
             widget: "list"
             fields:
-              - { label: "Icon (Font Awesome Class)", name: "icon", widget: "string", hint: "e.g., fas fa-home" }
+              - { label: "Icon (Font Awesome Class)", name: "icon", widget: "string", hint: "e.g., fas fa-home or fas fa-building" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "string" }
 
