@@ -3,7 +3,7 @@ backend:
   name: git-gateway
   repo: finestxxx/cleaning-service
   branch: main
-  identity_url: https://auth.decapbridge.com/sites/58b477a7-aace-46a8-863e-9800d2e87004
+  identity_url: https://auth.decapbridge.com/sites/b82160de-e1cd-49e4-b373-171433059f6d
   gateway_url: https://gateway.decapbridge.com
 
   # Quickly see who did what (optional)
@@ -19,15 +19,4 @@ backend:
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
 # Add site links in DecapCMS (optional)
-site_url: https://sparkle-clean.netlify.app
-
-collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "index.html"
-        label: "Home Page"
-        name: "home"
-        fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+site_url: https://finestxxx.github.io
