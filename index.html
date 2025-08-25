@@ -16,7 +16,7 @@
 
     <header class="main-header">
         <nav class="navbar">
-            <a href="#" class="nav-logo">Sparkle Clean</a>
+            <a href="#" class="nav-logo" id="logo-text">Sparkle Clean</a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
@@ -28,10 +28,11 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
+        <!-- The background image will be set by JavaScript -->
+        <section class="hero" id="hero-section">
             <div class="hero-content">
-                <h1>Your Home, Impeccably Clean.</h1>
-                <p>Professional, reliable, and eco-friendly cleaning services for your peace of mind.</p>
+                <h1 id="hero-title"></h1>
+                <p id="hero-subtitle"></p>
                 <a href="#contact" class="cta-button">Get a Free Estimate</a>
             </div>
         </section>
@@ -40,11 +41,13 @@
         <section id="about" class="about-us">
             <div class="container about-us-container">
                 <div class="about-us-image">
-                    <img src="https://images.pexels.com/photos/4239037/pexels-photo-4239037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Friendly cleaning professional">
+                    <!-- The image src will be set by JavaScript -->
+                    <img src="" alt="Friendly cleaning professional" id="about-image">
                 </div>
                 <div class="about-us-text">
-                    <h2>Welcome to Sparkle Clean</h2>
-                    <p>We are a locally owned and operated cleaning company dedicated to providing exceptional service and creating pristine environments for our clients. Our mission is to take the stress out of cleaning, so you can focus on what matters most. We use eco-friendly products and meticulous techniques to ensure a healthy, happy home.</p>
+                    <h2 id="about-title"></h2>
+                    <!-- The paragraph content will be set by JavaScript -->
+                    <div id="about-description"></div>
                 </div>
             </div>
         </section>
@@ -52,28 +55,9 @@
         <!-- Services Section -->
         <section id="services" class="services">
             <div class="container">
-                <h2>Our Services</h2>
-                <div class="service-grid">
-                    <div class="service-item">
-                        <i class="fas fa-home"></i>
-                        <h3>Residential Cleaning</h3>
-                        <p>A thorough and reliable cleaning of your home, from top to bottom, on a schedule that works for you.</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-building"></i>
-                        <h3>Commercial Cleaning</h3>
-                        <p>Keep your office space clean, sanitized, and productive for your employees and clients.</p>
-                    </div>
-                    <div class="service-item">
-                        <i class="fas fa-leaf"></i>
-                        <h3>Deep Cleaning</h3>
-                        <p>An intensive, detailed cleaning service perfect for spring cleaning or special occasions.</p>
-                    </div>
-                     <div class="service-item">
-                        <i class="fas fa-truck-moving"></i>
-                        <h3>Move-In/Out Cleaning</h3>
-                        <p>Ensure your old or new home is spotless with our comprehensive move-in and move-out services.</p>
-                    </div>
+                <h2 id="services-title"></h2>
+                <!-- This grid will be populated by JavaScript -->
+                <div class="service-grid" id="service-grid">
                 </div>
             </div>
         </section>
@@ -81,44 +65,9 @@
         <!-- Pricing Section -->
         <section id="pricing" class="pricing">
             <div class="container">
-                <h2>Transparent Packages</h2>
-                <div class="pricing-table">
-                    <div class="pricing-plan">
-                        <h3>Standard Clean</h3>
-                        <div class="price">$150</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> General Dusting & Wiping</li>
-                            <li><i class="fas fa-check"></i> Vacuum & Mop Floors</li>
-                            <li><i class="fas fa-check"></i> Kitchen Surfaces & Sink</li>
-                            <li><i class="fas fa-check"></i> Bathroom Cleaning</li>
-                            <li><i class="fas fa-times"></i> Inside Ovens & Cabinets</li>
-                        </ul>
-                        <a href="#contact" class="cta-button">Choose Plan</a>
-                    </div>
-                    <div class="pricing-plan popular">
-                        <h3>Deep Clean</h3>
-                        <div class="price">$250</div>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Everything in Standard</li>
-                            <li><i class="fas fa-check"></i> Detailed Baseboards</li>
-                            <li><i class="fas fa-check"></i> Inside Ovens & Fridge</li>
-                            <li><i class="fas fa-check"></i> Light Fixtures & Fans</li>
-                            <li><i class="fas fa-check"></i> Interior Windows</li>
-                        </ul>
-                        <a href="#contact" class="cta-button">Choose Plan</a>
-                    </div>
-                    <div class="pricing-plan">
-                        <h3>Move-In/Out</h3>
-                        <div class="price">$350</div>
-                         <ul>
-                            <li><i class="fas fa-check"></i> Everything in Deep Clean</li>
-                            <li><i class="fas fa-check"></i> Inside All Cabinets</li>
-                            <li><i class="fas fa-check"></i> Inside All Closets</li>
-                            <li><i class="fas fa-check"></i> Garage Sweep (Optional)</li>
-                            <li><i class="fas fa-check"></i> Ready for New Occupants</li>
-                        </ul>
-                        <a href="#contact" class="cta-button">Choose Plan</a>
-                    </div>
+                <h2 id="pricing-title"></h2>
+                <!-- This table will be populated by JavaScript -->
+                <div class="pricing-table" id="pricing-table">
                 </div>
             </div>
         </section>
@@ -126,11 +75,9 @@
         <!-- Testimonials Section -->
         <section class="testimonials">
             <div class="container">
-                <h2>What Our Clients Say</h2>
-                <div class="testimonial">
-                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Client 1">
-                    <blockquote>"The best cleaning service I've ever used! My home has never looked better. The team was professional, punctual, and incredibly thorough. Highly recommend!"</blockquote>
-                    <cite>- Sarah L.</cite>
+                <h2 id="testimonials-title"></h2>
+                <!-- This container will be populated by JavaScript -->
+                <div class="testimonial" id="testimonial-container">
                 </div>
             </div>
         </section>
@@ -138,8 +85,9 @@
         <!-- Contact/Booking Form Section -->
         <section id="contact" class="booking-form">
             <div class="container">
-                <h2>Book Your Cleaning Today!</h2>
-                <form action="#" method="POST">
+                <h2 id="contact-title"></h2>
+                <!-- The form action should be set to your Formspree endpoint or other service -->
+                <form action="https://formspree.io/f/your_unique_code" method="POST">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <select name="service" required>
@@ -158,10 +106,96 @@
 
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 Sparkle Clean. All Rights Reserved.</p>
+            <p id="footer-text"></p>
         </div>
     </footer>
 
+    <!-- Library to render Markdown content from the CMS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    
+    <!-- Your existing script.js can be used for things like smooth scroll -->
     <script src="script.js"></script>
+
+    <!-- New script to load content from Decap CMS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Fetch the single JSON file containing all homepage content
+                const response = await fetch('/_data/homepage.json');
+                if (!response.ok) {
+                    throw new Error('Could not fetch homepage data.');
+                }
+                const data = await response.json();
+                const converter = new showdown.Converter();
+
+                // --- Populate Hero Section ---
+                document.getElementById('hero-section').style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${data.hero_image}')`;
+                document.getElementById('hero-title').innerText = data.hero_title;
+                document.getElementById('hero-subtitle').innerText = data.hero_subtitle;
+                document.getElementById('logo-text').innerText = data.logo_text;
+
+                // --- Populate About Section ---
+                document.getElementById('about-image').src = data.about_image;
+                document.getElementById('about-title').innerText = data.about_title;
+                document.getElementById('about-description').innerHTML = converter.makeHtml(data.about_description);
+
+                // --- Populate Services Section ---
+                document.getElementById('services-title').innerText = data.services_title;
+                const serviceGrid = document.getElementById('service-grid');
+                serviceGrid.innerHTML = ''; // Clear existing content
+                data.services.forEach(service => {
+                    const serviceDiv = document.createElement('div');
+                    serviceDiv.className = 'service-item';
+                    serviceDiv.innerHTML = `
+                        <i class="${service.icon}"></i>
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                    `;
+                    serviceGrid.appendChild(serviceDiv);
+                });
+
+                // --- Populate Pricing Section ---
+                document.getElementById('pricing-title').innerText = data.pricing_title;
+                const pricingTable = document.getElementById('pricing-table');
+                pricingTable.innerHTML = ''; // Clear existing content
+                data.pricing_plans.forEach(plan => {
+                    const planDiv = document.createElement('div');
+                    planDiv.className = `pricing-plan ${plan.is_popular ? 'popular' : ''}`;
+                    // Create list items from the features string array
+                    const featuresList = plan.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('');
+                    planDiv.innerHTML = `
+                        <h3>${plan.title}</h3>
+                        <div class="price">${plan.price}</div>
+                        <ul>${featuresList}</ul>
+                        <a href="#contact" class="cta-button">Choose Plan</a>
+                    `;
+                    pricingTable.appendChild(planDiv);
+                });
+
+                // --- Populate Testimonials Section ---
+                document.getElementById('testimonials-title').innerText = data.testimonials_title;
+                const testimonialContainer = document.getElementById('testimonial-container');
+                testimonialContainer.innerHTML = ''; // Clear existing content
+                // For now, we'll show the first testimonial. You could build a slider here.
+                if (data.testimonials && data.testimonials.length > 0) {
+                    const testimonial = data.testimonials[0];
+                    testimonialContainer.innerHTML = `
+                        <img src="${testimonial.image}" alt="Client ${testimonial.author}">
+                        <blockquote>"${testimonial.quote}"</blockquote>
+                        <cite>- ${testimonial.author}</cite>
+                    `;
+                }
+
+                 // --- Populate Contact Section ---
+                document.getElementById('contact-title').innerText = data.contact_title;
+
+                // --- Populate Footer ---
+                document.getElementById('footer-text').innerText = data.footer_text;
+
+            } catch (error) {
+                console.error('Error loading dynamic content:', error);
+            }
+        });
+    </script>
 </body>
 </html>
