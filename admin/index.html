@@ -5,13 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
 
-  <!-- This script is required by the identity_widget in the config.yml -->
-  <!-- It will create the correct login pop-up for you. -->
+  <!-- This script loads the Identity Widget's code, as per the docs -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 </head>
 <body>
-  <!-- This script builds the page and powers Decap CMS -->
+  <!-- This script loads the CMS application code -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <!-- 
+    This is the Manual Initialization script, directly from the official Decap CMS documentation.
+    It prevents the widget from looking for Netlify-specific settings, which was causing your error.
+  -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
