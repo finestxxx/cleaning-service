@@ -1,14 +1,12 @@
-# Backend Configuration for GitHub + Decap Bridge
+# Backend Configuration for GitHub + Decap Bridge (The Correct Method)
 backend:
-  name: git-gateway # This tells the CMS to use a gateway for authentication
+  name: github
   repo: finestxxx/cleaning-service
   branch: main
-
-# This is the critical section that was missing.
-# It tells the git-gateway which specific auth service to use.
-identity_widget:
-  url: https://decap-bridge.onrender.com
-  oauth_provider: github
+  
+  # These two lines tell the 'github' backend to use Decap Bridge for authentication
+  base_url: https://decap-bridge.onrender.com
+  auth_endpoint: auth
 
 # Media files (images) configuration
 media_folder: "assets/images"
@@ -17,7 +15,7 @@ public_folder: "/cleaning-service/assets/images"
 # Add a link back to your live site from the admin panel
 site_url: https://finestxxx.github.io/cleaning-service/
 
-# Collections (your content)
+# Collections (your content) - This part remains the same.
 collections:
   - name: "pages"
     label: "Page Content"
